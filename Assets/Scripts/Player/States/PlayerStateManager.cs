@@ -15,6 +15,11 @@ namespace Player.States
             InitializeStates();
         }
 
+        public void AddState(IPlayerState playerState)
+        {
+            _playerStates.Add(playerState);
+        }
+
         public void StartAttackInput()
         {
             foreach (var state in _playerStates)
