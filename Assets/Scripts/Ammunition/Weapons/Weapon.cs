@@ -37,7 +37,7 @@ namespace Ammunition.Weapons
         {
             shell.transform.SetParent(_ammunition);
             var shellRb = shell.gameObject.GetComponent<Rigidbody>();
-            shellRb.AddForce(Vector3.forward * shell.shellCharacteristic.force, ForceMode.Impulse);
+            shellRb.AddForce(shell.transform.forward * shell.shellCharacteristic.force, ForceMode.Impulse);
         }
 
         protected virtual void Reload()

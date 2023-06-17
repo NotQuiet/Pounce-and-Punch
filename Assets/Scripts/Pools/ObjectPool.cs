@@ -47,9 +47,9 @@ namespace Pools
             var prefab = _objects.Dequeue();
             _objects.Enqueue(prefab);
             prefab.gameObject.SetActive(true);
-            Transform transform;
-            (transform = prefab.transform).SetParent(_parent);
-            transform.position = Vector3.zero;
+            Transform objTransform;
+            (objTransform = prefab.transform).SetParent(_parent);
+            objTransform.position = Vector3.zero;
             Object = prefab;
         }
     }
