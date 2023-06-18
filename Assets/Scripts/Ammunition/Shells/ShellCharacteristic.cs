@@ -7,6 +7,6 @@ namespace Ammunition.Shells
     {
         public int damage;
         public int force;
-        public int lifeTime;
+        public float lifeTime;
     }
 }

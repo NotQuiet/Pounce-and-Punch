@@ -39,6 +39,7 @@ namespace Ammunition.Weapons
             var shellRb = shell.gameObject.GetComponent<Rigidbody>();
             shellRb.velocity = Vector3.zero;
             shellRb.AddForce(muzzle.forward * shell.shellCharacteristic.force, ForceMode.Impulse);
+            shell.Activate();
         }
 
         protected virtual void Reload()

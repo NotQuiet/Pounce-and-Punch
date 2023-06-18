@@ -55,6 +55,15 @@ namespace Player.States
                     move.OnEndMove();
             }
         }
+
+        public void OnGetDamage(int damageValue)
+        {
+            foreach (var state in _playerStates)
+            {
+                if(state is IOnGetDamage damageState)
+                    damageState.OnGetDamage(damageValue);
+            }
+        }
         
         private void InitializeStates()
         {

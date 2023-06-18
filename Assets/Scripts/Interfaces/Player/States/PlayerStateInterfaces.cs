@@ -18,4 +18,9 @@ namespace Interfaces.Player.States
         void OnMove();
         void OnEndMove();
     }
+
+    public interface IOnGetDamage : IPlayerState
+    {
+        void OnGetDamage(int damageValue);
+    }
 }

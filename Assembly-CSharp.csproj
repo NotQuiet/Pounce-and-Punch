@@ -72,6 +72,10 @@
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
      <Compile Include="Assets/Scripts/Fabrics/AbstractFabric.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Pools/BazookaShellPool.cs" />
+     <Compile Include="Assets/Scripts/Player/Matchmaking/PlayerLifeController.cs" />
+     <Compile Include="Assets/Scripts/Interfaces/Player/IDamageable.cs" />
+     <Compile Include="Assets/Scripts/Player/Matchmaking/PlayerLifeCharacteristics.cs" />
+     <Compile Include="Assets/Scripts/Player/Matchmaking/DamageController.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Label" />
      <Folder Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks" />
@@ -86,6 +90,7 @@
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Frames" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Animatons" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Particle/Texture" />
+     <Folder Include="Assets/Scripts/Player/Matchmaking" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Particle" />
      <None Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Extensions/UIParticle/hidden particle.shader" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData" />

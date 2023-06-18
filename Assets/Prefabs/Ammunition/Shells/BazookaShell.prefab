@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5079150833487440286}
   - component: {fileID: 5079150833487440258}
   - component: {fileID: 5079150833487440259}
-  - component: {fileID: 5079150833487440284}
+  - component: {fileID: 1348522358107939400}
   m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5079150833487440284
+--- !u!135 &1348522358107939400
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 5079150834314531513}
   - component: {fileID: 5079150834314531514}
   - component: {fileID: 7401283398806430845}
+  - component: {fileID: 7675683777248831556}
   m_Layer: 6
   m_Name: BazookaShell
   m_TagString: Untagged
@@ -146,7 +147,7 @@ MonoBehaviour:
   shellCharacteristic:
     damage: 10
     force: 20
-    lifeTime: 0
+    lifeTime: 5
 --- !u!54 &7401283398806430845
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,3 +164,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!135 &7675683777248831556
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5079150834314531515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
