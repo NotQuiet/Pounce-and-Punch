@@ -224,4 +224,4 @@ MonoBehaviour:
     reloadTime: 2
   shellFabric: {fileID: 2544024479413163205}
   muzzle: {fileID: 2544024479463324555}
-  poolSize: 5
+  poolSize: 1

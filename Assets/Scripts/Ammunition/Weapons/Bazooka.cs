@@ -7,11 +7,12 @@ namespace Ammunition.Weapons
     {
         public void OnAimAttack()
         {
-            ProduceProjectile();
+            // effect here
         }
 
         public void OnEndAimAttack()
         {
+            ProduceProjectile();
             Shoot();
         }
         
