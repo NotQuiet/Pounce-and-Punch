@@ -11,13 +11,13 @@ namespace Player.Modules
         [SerializeField] private Transform cameraPosition;
         [SerializeField] private Transform lookTarget;
         [SerializeField] private Camera camera;
-        
+
         private readonly float _lerpSpeed = 3f;
         private readonly float _smoothReturnSpeed = 20f;
         private readonly float _smoothChangeSpeed = 6f;
         private readonly float _aimDistance = 2f;
         private Vector3 _lookTargetStartPosition;
-        
+
         private void Start()
         {
             _lookTargetStartPosition = lookTarget.localPosition;
@@ -26,13 +26,18 @@ namespace Player.Modules
         public void OnAimAttack()
         {
             ChangeLookTargetPosition();
+
+            cameraPosition.position = new Vector3(cameraPosition.position.x,
+                cameraPosition.position.y - 0.5f, cameraPosition.position.z);
         }
 
         public void OnEndAimAttack()
         {
             ReturnLookTarget();
+            cameraPosition.position = new Vector3(cameraPosition.position.x,
+                cameraPosition.position.y + 0.5f, cameraPosition.position.z);
         }
-        
+
         private void LateUpdate()
         {
             Follow();
@@ -68,22 +73,22 @@ namespace Player.Modules
             while (lookTarget.localPosition.z < _aimDistance)
             {
                 var localPosition = lookTarget.localPosition;
-                Vector3 newLookPosition = Vector3.Lerp(localPosition, 
-                    new Vector3(localPosition.x, localPosition.y, _aimDistance), 
+                Vector3 newLookPosition = Vector3.Lerp(localPosition,
+                    new Vector3(localPosition.x, localPosition.y, _aimDistance),
                     _smoothChangeSpeed * Time.deltaTime);
                 localPosition = newLookPosition;
                 lookTarget.localPosition = localPosition;
                 yield return null;
             }
         }
-        
+
         IEnumerator SmoothReturnTargetPosition()
         {
             while (lookTarget.localPosition.z > _lookTargetStartPosition.z)
             {
                 var localPosition = lookTarget.localPosition;
-                Vector3 newLookPosition = Vector3.Lerp(localPosition, 
-                    _lookTargetStartPosition, 
+                Vector3 newLookPosition = Vector3.Lerp(localPosition,
+                    _lookTargetStartPosition,
                     _smoothReturnSpeed * Time.deltaTime);
                 localPosition = newLookPosition;
                 lookTarget.localPosition = localPosition;
