@@ -5,7 +5,8 @@ namespace Ammunition.Shells
     [Serializable]
     public class ShellCharacteristic
     {
-        public int damage;
+        public int absolutDamage;
+        public int currentamage;
         public int force;
         public float lifeTime;
     }

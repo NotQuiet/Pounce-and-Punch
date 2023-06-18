@@ -221,7 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characteristics:
-    reloadTime: 2
+    possiblePower: 2
+    currentPower: 0
   shellFabric: {fileID: 2544024479413163205}
   muzzle: {fileID: 2544024479463324555}
   poolSize: 1

@@ -1,12 +1,14 @@
 using System;
 using Ammunition.Shells;
 using Fabrics;
+using Interfaces.Player;
+using Player.Matchmaking.Managers;
 using Pools;
 using UnityEngine;
 
 namespace Ammunition.Weapons
 {
-    public class Weapon : MonoBehaviour
+    public class Weapon : MonoBehaviour, IWeaponPowerChange
     {
         public WeaponCharacteristics characteristics;
 
@@ -18,10 +20,12 @@ namespace Ammunition.Weapons
         protected ObjectPool<Shell> _shellPool;
 
         private Transform _ammunition;
+        private PlayerWeaponManager _weaponManager;
 
         private void Start()
         {
             CreatePool();
+            _weaponManager.AddState(this);
         }
 
         public void SetAmmunition(Transform ammunition)
@@ -39,7 +43,9 @@ namespace Ammunition.Weapons
             var shellRb = shell.gameObject.GetComponent<Rigidbody>();
             shellRb.velocity = Vector3.zero;
             shellRb.AddForce(muzzle.forward * shell.shellCharacteristic.force, ForceMode.Impulse);
+            shell.AddPower(characteristics.currentPower);
             shell.Activate();
+            characteristics.currentPower = 0;
         }
 
         protected virtual void Reload()
@@ -51,6 +57,16 @@ namespace Ammunition.Weapons
         {
             _shellPool.Produce();
             shell = _shellPool.Object;
+        }
+
+        public void InitializeWeaponManager(PlayerWeaponManager manager)
+        {
+            _weaponManager = manager;
+        }
+
+        public void OnChangePower(int power)
+        {
+            characteristics.currentPower = power;
         }
     }
 }

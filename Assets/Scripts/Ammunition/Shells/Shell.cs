@@ -8,17 +8,29 @@ namespace Ammunition.Shells
     public class Shell : MonoBehaviour
     {
         public ShellCharacteristic shellCharacteristic;
-
+        
+        private bool _activated;
+        
         public void Activate()
         {
+            _activated = false;
             StartLifeTime();
+        }
+
+        public void AddPower(int power)
+        {
+            shellCharacteristic.currentamage += power;
         }
         
         private void OnTriggerEnter(Collider other)
         {
+            if(_activated)
+                return;
+            
             if (other.TryGetComponent(out IDamageable damageable))
             {
-                damageable.DoDamage(shellCharacteristic.damage);
+                damageable.DoDamage(shellCharacteristic.currentamage);
+                _activated = true;
             }
         }
 
@@ -29,6 +41,7 @@ namespace Ammunition.Shells
 
         private void OnLifetimeEnd()
         {
+            shellCharacteristic.currentamage = shellCharacteristic.absolutDamage;
             gameObject.SetActive(false);
             StopCoroutine(nameof(LifetimeCoroutine));
         }

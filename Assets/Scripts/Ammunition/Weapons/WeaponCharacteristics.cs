@@ -5,6 +5,7 @@ namespace Ammunition.Weapons
     [Serializable]
     public class WeaponCharacteristics
     {
-        public int reloadTime;
+        public float possiblePower;
+        public int currentPower;
     }
 }

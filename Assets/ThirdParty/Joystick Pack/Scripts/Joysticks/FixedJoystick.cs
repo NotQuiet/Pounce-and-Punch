@@ -1,6 +1,6 @@
 ﻿using System;
 using Interfaces.Player.States;
-using Player.States;
+using Player.Matchmaking.Managers;
 using ThirdParty.Joystick_Pack.Scripts.Base;
 using UnityEngine;
 using UnityEngine.EventSystems;

@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shellCharacteristic:
-    damage: 10
+    absolutDamage: 10
+    currentamage: 0
     force: 20
     lifeTime: 5
 --- !u!54 &7401283398806430845

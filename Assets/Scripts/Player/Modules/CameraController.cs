@@ -1,6 +1,6 @@
 using System.Collections;
 using Interfaces.Player.States;
-using Player.States;
+using Player.Matchmaking.Managers;
 using UnityEngine;
 
 namespace Player.Modules

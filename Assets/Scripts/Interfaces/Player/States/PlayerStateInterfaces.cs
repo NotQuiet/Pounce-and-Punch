@@ -1,4 +1,4 @@
-using Player.States;
+using Player.Matchmaking.Managers;
 
 namespace Interfaces.Player.States
 {
@@ -22,5 +22,10 @@ namespace Interfaces.Player.States
     public interface IOnGetDamage : IPlayerState
     {
         void OnGetDamage(int damageValue);
+    }
+
+    public interface IWeaponReload : IPlayerState
+    {
+        void OnWeaponReload(float currentValue);
     }
 }
