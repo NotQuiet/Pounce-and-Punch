@@ -19,6 +19,7 @@ namespace Player.Modules
         private readonly float _slowDownOffset = 3f;
         private readonly float _turnSpeed = 0.1f;
 
+
         private float _currentSpeed = 10f;
         private float _turnSmoothVelocity;
 
@@ -61,7 +62,7 @@ namespace Player.Modules
             {
                 _currentSpeed = _speed;
             }
-            
+
             _rb.AddForce(direction * _currentSpeed * Time.deltaTime, ForceMode.Impulse);
         }
 

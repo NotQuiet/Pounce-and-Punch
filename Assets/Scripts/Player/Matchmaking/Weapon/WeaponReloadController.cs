@@ -42,7 +42,10 @@ namespace Player.Matchmaking.Weapon
             while (_isAim)
             {
                 reloadImage.fillAmount -= Time.deltaTime / power;
-                currentPower++;
+                
+                if(reloadImage.fillAmount > 0)
+                    currentPower++;
+                
                 _weaponManager.PowerChange(currentPower);
                 yield return null;
             }
