@@ -69,6 +69,15 @@ namespace Player.Matchmaking.Managers
             }
         }
 
+        public void OnPlayerDead()
+        {
+            foreach (var state in _playerStates)
+            {
+                if(state is IOnDeath death)
+                    death.OnPlayerDeath();
+            }
+        }
+
         public void OnAttackHandlerInput(Vector2 handlerPosition)
         {
             foreach (var state in _playerStates)

@@ -61,6 +61,7 @@ namespace Ammunition.Weapons
                 shell.AddPower(characteristics.currentPower);
             
             shell.Activate();
+            
             characteristics.currentPower = 0;
         }
 

@@ -1,8 +1,7 @@
-using System;
+using Cysharp.Threading.Tasks;
 using Interfaces.Player.States;
 using Player.Matchmaking.Managers;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Player.Matchmaking.PlayerLife
 {
@@ -11,9 +10,19 @@ namespace Player.Matchmaking.PlayerLife
         [SerializeField] private PlayerLifeCharacteristics playerLifeCharacteristics;
         [SerializeField] private PlayerHealthSlider playerHealthSlider;
 
+        private PlayerStateManager _playerStateManager;
+        
         private void Start()
         {
             InitializeSlider();
+        }
+
+        private async UniTask ResetPlayer()
+        {
+            await UniTask.Delay(3000);
+            
+            playerLifeCharacteristics.ChangeCurrentHp(playerLifeCharacteristics.absoluteHp);
+            playerHealthSlider.SetAbsoluteValues(playerLifeCharacteristics.absoluteHp);
         }
         
         public void OnGetDamage(float damageValue)
@@ -24,8 +33,18 @@ namespace Player.Matchmaking.PlayerLife
             playerLifeCharacteristics.ChangeCurrentHp(newValue);
             
             OnChangeHp();
+            IsLethalDamage();
             
             Debug.Log($"On get damage: damage value - {damageValue} currentHp - {playerLifeCharacteristics.CurrentHp}");
+        }
+
+        private async void IsLethalDamage()
+        {
+            if (playerLifeCharacteristics.CurrentHp <= 0)
+            {
+                _playerStateManager.OnPlayerDead();
+                await ResetPlayer();
+            }
         }
 
         private void OnChangeHp()
@@ -35,8 +54,8 @@ namespace Player.Matchmaking.PlayerLife
 
         public void InitializeStateManager(PlayerStateManager manager)
         {
+            _playerStateManager = manager;
             playerLifeCharacteristics.Initialize();
-            
         }
 
         private void InitializeSlider()

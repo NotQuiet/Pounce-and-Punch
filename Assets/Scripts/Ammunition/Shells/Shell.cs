@@ -34,7 +34,8 @@ namespace Ammunition.Shells
 
         public void AddPower(int power)
         {
-            shellCharacteristic.currentamage += power;
+            Debug.Log("Add power to shell: " + power);
+            shellCharacteristic.currentDamage += power;
         }
 
         public Rigidbody GetRb()
@@ -52,8 +53,6 @@ namespace Ammunition.Shells
         {
             if (other.TryGetComponent(out IDamageable damageable))
             {
-                Debug.Log("Shell do damage: " + other.name);
-
                 DoDamage(damageable);
             }
             
@@ -74,8 +73,15 @@ namespace Ammunition.Shells
         {
             if(_activated)
                 return;
-            
-            damageable.DoDamage(shellCharacteristic.currentamage);
+
+            Debug.Log("Shell damage: " + shellCharacteristic.currentDamage);
+            damageable.DoDamage(shellCharacteristic.currentDamage);
+            ResetDamage();
+        }
+
+        private void ResetDamage()
+        {
+            shellCharacteristic.currentDamage = shellCharacteristic.absolutDamage;
         }
 
         private void StartLifeTime()
@@ -85,7 +91,7 @@ namespace Ammunition.Shells
 
         private void OnLifetimeEnd()
         {
-            shellCharacteristic.currentamage = shellCharacteristic.absolutDamage;
+            shellCharacteristic.currentDamage = shellCharacteristic.absolutDamage;
             explodeEffect.gameObject.SetActive(false);
             gameObject.SetActive(false);
             StopCoroutine(nameof(LifetimeCoroutine));

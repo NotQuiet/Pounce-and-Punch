@@ -20,6 +20,8 @@ namespace Player.Matchmaking.PlayerLife
         
         public async void OnHealthChange(float value)
         {
+            if(value < 0) value = 0;
+            
             await ChangeSliderValue(value, healthSlider, healthSlider.maxValue/2);
             await ChangeSliderValue(value, healthSliderBack, healthSlider.maxValue);
         }
