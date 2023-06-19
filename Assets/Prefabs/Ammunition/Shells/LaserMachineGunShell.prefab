@@ -227,8 +227,8 @@ MonoBehaviour:
   shellGo: {fileID: 1997148162916450965}
   damageTrigger: {fileID: 6105141089504857245}
   shellCharacteristic:
-    absolutDamage: 20
-    currentDamage: 0
+    absolutDamage: 30
+    currentDamage: 30
     force: 20
     lifeTime: 1
   muzzleEffect: {fileID: 765947241390207503}

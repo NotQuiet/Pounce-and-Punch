@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/Player/Matchmaking/Managers/PlayerWeaponManager.cs" />
+     <Compile Include="Assets/Scripts/Ammunition/Weapons/ImpulseGun.cs" />
      <Compile Include="Assets/Scripts/Interfaces/Player/States/PlayerStateInterfaces.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
@@ -56,6 +57,7 @@
      <Compile Include="Assets/Scripts/Fabrics/ShellFabric.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/WeaponCharacteristics.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/ShellCharacteristic.cs" />
+     <Compile Include="Assets/Scripts/Ammunition/Shells/ImpulseShell.cs" />
      <Compile Include="Assets/Scripts/Player/Initialize/PlayerInitializeManager.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/Shell.cs" />
      <Compile Include="Assets/Scripts/Interfaces/Player/IMove.cs" />
@@ -77,6 +79,7 @@
      <Compile Include="Assets/Scripts/Player/Modules/Mover.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/Weapon.cs" />
      <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
+     <Compile Include="Assets/Scripts/Ammunition/Weapons/ObsidianGun.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/ShellDamageTrigger.cs" />
      <Compile Include="Assets/Scripts/Game/GameManager.cs" />
      <Compile Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Extensions/UIParticle/UIParticleSystem.cs" />
@@ -90,10 +93,7 @@
      <Compile Include="Assets/Scripts/Ammunition/Pools/BazookaShellPool.cs" />
      <Compile Include="Assets/ThirdParty/VFX_Klaus/Scripts/RotateToMouse.cs" />
      <Compile Include="Assets/Scripts/Player/Matchmaking/PlayerLife/PlayerLifeCharacteristics.cs" />
-     <Compile Include="Assets/Scripts/Ammunition/Weapons/ImpulseGun.cs" />
-     <Compile Include="Assets/Scripts/Ammunition/Shells/ImpulseShell.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/ObsidianShell.cs" />
-     <Compile Include="Assets/Scripts/Ammunition/Weapons/ObsidianGun.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Label" />
      <Folder Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks" />

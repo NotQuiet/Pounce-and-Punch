@@ -221,9 +221,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characteristics:
-    possiblePower: 5
+    possiblePower: 2
     currentPower: 5
-    shootDelay: 0.15
+    shootDelay: 0.1
   shellFabric: {fileID: 2544024479413163205}
   muzzle: {fileID: 2544024479463324555}
   poolSize: 20
