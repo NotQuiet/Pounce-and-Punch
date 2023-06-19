@@ -17,6 +17,7 @@ namespace ThirdParty.Joystick_Pack.Scripts.Joysticks
             base.HandleInput(magnitude, normalised, radius, cam);
 
             OnAttackInput?.Invoke(Direction);
+            _stateManager.OnAttackHandlerInput(HandlerPosition);
         }
 
         public override void OnPointerDown(PointerEventData eventData)

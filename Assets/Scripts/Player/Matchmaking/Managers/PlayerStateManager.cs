@@ -68,6 +68,15 @@ namespace Player.Matchmaking.Managers
                     weaponReload.OnWeaponReload(currentValue);
             }
         }
+
+        public void OnAttackHandlerInput(Vector2 handlerPosition)
+        {
+            foreach (var state in _playerStates)
+            {
+                if(state is IAttackHandlerInput handlerInput)
+                    handlerInput.OnAttackHandlerInput(handlerPosition);
+            }
+        }
         
         private void InitializeStates()
         {

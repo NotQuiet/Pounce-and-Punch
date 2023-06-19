@@ -1,4 +1,5 @@
 using Player.Matchmaking.Managers;
+using UnityEngine;
 
 namespace Interfaces.Player.States
 {
@@ -27,5 +28,10 @@ namespace Interfaces.Player.States
     public interface IWeaponReload : IPlayerState
     {
         void OnWeaponReload(float currentValue);
+    }
+
+    public interface IAttackHandlerInput : IPlayerState
+    {
+        void OnAttackHandlerInput(Vector2 handlerPosition);
     }
 }
