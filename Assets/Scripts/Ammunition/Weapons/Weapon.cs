@@ -37,13 +37,17 @@ namespace Ammunition.Weapons
         {
             _shellPool = new ObjectPool<Shell>(poolSize, shellFabric, muzzle);
         }
-        protected virtual void Shoot()
+        protected virtual void Shoot(bool usePower = true)
         {
+            shell.Reset();
             shell.transform.SetParent(_ammunition);
-            var shellRb = shell.gameObject.GetComponent<Rigidbody>();
+            var shellRb = shell.GetRb();
             shellRb.velocity = Vector3.zero;
             shellRb.AddForce(muzzle.forward * shell.shellCharacteristic.force, ForceMode.Impulse);
-            shell.AddPower(characteristics.currentPower);
+            
+            if(usePower)
+                shell.AddPower(characteristics.currentPower);
+            
             shell.Activate();
             characteristics.currentPower = 0;
         }

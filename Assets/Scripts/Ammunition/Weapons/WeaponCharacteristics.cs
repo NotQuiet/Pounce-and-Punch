@@ -7,5 +7,7 @@ namespace Ammunition.Weapons
     {
         public float possiblePower;
         public int currentPower;
+
+        public float shootDelay;
     }
 }

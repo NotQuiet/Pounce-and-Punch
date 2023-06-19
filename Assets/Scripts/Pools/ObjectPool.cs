@@ -50,6 +50,7 @@ namespace Pools
             Transform objTransform;
             (objTransform = prefab.transform).SetParent(_parent);
             objTransform.localPosition = Vector3.zero;
+            objTransform.localRotation = Quaternion.identity;
             Object = prefab;
         }
     }

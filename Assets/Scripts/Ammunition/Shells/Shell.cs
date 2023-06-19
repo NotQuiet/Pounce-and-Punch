@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Interfaces.Player;
 using UnityEngine;
@@ -10,12 +9,24 @@ namespace Ammunition.Shells
         [SerializeField] private GameObject projectile;
         [SerializeField] private ParticleSystem explodeEffect;
         [SerializeField] private Rigidbody rb;
-        
+        [SerializeField] private GameObject shellGo;
+        [SerializeField] private ShellDamageTrigger damageTrigger;
+
         public ShellCharacteristic shellCharacteristic;
         
         private bool _activated;
-        
-        public void Activate()
+
+        private void OnEnable()
+        {
+            damageTrigger.OnTrigger += OnTrigger;
+        }
+
+        private void OnDisable()
+        {
+            damageTrigger.OnTrigger -= OnTrigger;
+        }
+
+        public virtual void Activate()
         {
             projectile.SetActive(true);
             _activated = false;
@@ -25,12 +36,20 @@ namespace Ammunition.Shells
         {
             shellCharacteristic.currentamage += power;
         }
-        
-        private void OnTriggerEnter(Collider other)
+
+        public Rigidbody GetRb()
         {
-            if(_activated)
-                return;
-            
+            return rb;
+        }
+
+        public void Reset()
+        {
+            shellGo.transform.localPosition = Vector3.zero;
+            shellGo.transform.localRotation = Quaternion.identity;
+        }
+
+        private void OnTrigger(Collider other)
+        {
             if (other.TryGetComponent(out IDamageable damageable))
             {
                 DoDamage(damageable);
@@ -38,8 +57,8 @@ namespace Ammunition.Shells
             
             Explode();
         }
-
-        private void Explode()
+        
+        protected virtual void Explode()
         {
             rb.velocity = Vector3.zero;
             explodeEffect.gameObject.SetActive(true);

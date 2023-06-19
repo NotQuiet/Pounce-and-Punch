@@ -84,6 +84,9 @@
      <Compile Include="Assets/ThirdParty/VFX_Klaus/Scripts/RotateToMouse.cs" />
      <Compile Include="Assets/ThirdParty/VFX_Klaus/Scripts/ProjectileMove.cs" />
      <Compile Include="Assets/ThirdParty/VFX_Klaus/Scripts/SpawnProjectiles.cs" />
+     <Compile Include="Assets/Scripts/Ammunition/Weapons/LaserMachineGun.cs" />
+     <Compile Include="Assets/Scripts/Ammunition/Shells/LaserMachineGunShell.cs" />
+     <Compile Include="Assets/Scripts/Ammunition/Shells/ShellDamageTrigger.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Label" />
      <Folder Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks" />
