@@ -396,6 +396,7 @@
 "Assets/Scripts/Player/Modules/MoveInput.cs"
 "Assets/Scripts/Player/Modules/Mover.cs"
 "Assets/Scripts/Player/Modules/PlayerAmmunition.cs"
+"Assets/Scripts/Player/UiCanvas/CanvasCameraFollowing.cs"
 "Assets/Scripts/Pools/ObjectPool.cs"
 "Assets/ThirdParty/Joystick Pack/Scripts/Base/Joystick.cs"
 "Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs"

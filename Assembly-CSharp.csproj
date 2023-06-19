@@ -81,6 +81,7 @@
      <Compile Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Extensions/UIParticle/UIParticleSystem.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/LaserMachineGunShell.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/LaserMachineGun.cs" />
+     <Compile Include="Assets/Scripts/Player/UiCanvas/CanvasCameraFollowing.cs" />
      <Compile Include="Assets/ThirdParty/VFX_Klaus/Scripts/ProjectileMove.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
      <Compile Include="Assets/Scripts/Fabrics/AbstractFabric.cs" />
@@ -170,6 +171,7 @@
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
      <Folder Include="Assets/TextMesh Pro/Shaders" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Extensions" />
+     <Folder Include="Assets/Scripts/Player/UiCanvas" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Slider" />
      <Folder Include="Assets/TextMesh Pro/Resources/Style Sheets" />
      <Folder Include="Assets/TutorialInfo/Scripts" />
