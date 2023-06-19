@@ -92,6 +92,8 @@
      <Compile Include="Assets/Scripts/Player/Matchmaking/PlayerLife/PlayerLifeCharacteristics.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/ImpulseGun.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/ImpulseShell.cs" />
+     <Compile Include="Assets/Scripts/Ammunition/Shells/ObsidianShell.cs" />
+     <Compile Include="Assets/Scripts/Ammunition/Weapons/ObsidianGun.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Label" />
      <Folder Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks" />

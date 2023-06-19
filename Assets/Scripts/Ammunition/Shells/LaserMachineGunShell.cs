@@ -8,9 +8,9 @@ namespace Ammunition.Shells
         
         public override void Activate()
         {
-            base.Activate();
             muzzleEffect.gameObject.SetActive(true);
             muzzleEffect.Play();
+            base.Activate();
         }
     }
 }
