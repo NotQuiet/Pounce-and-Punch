@@ -16,6 +16,7 @@ namespace Player.Matchmaking.Weapon
         private PlayerWeaponManager _weaponManager;
 
         private bool _isAim;
+        private int currentPower = 0;
 
         public void OnAimAttack()
         {
@@ -40,7 +41,6 @@ namespace Player.Matchmaking.Weapon
         IEnumerator DecreaseWeaponReloadUi()
         {
             var power = _weaponCharacteristics.possiblePower;
-            int currentPower = 0;
             while (_isAim)
             {
                 if (reloadImage.fillAmount <= 0.01f)
@@ -51,7 +51,7 @@ namespace Player.Matchmaking.Weapon
 
                 reloadImage.fillAmount -= Time.deltaTime / power;
                 
-                if(reloadImage.fillAmount > 0)
+                if(reloadImage.fillAmount > 0.1f)
                     currentPower++;
                 
                 _weaponManager.PowerChange(currentPower);
@@ -83,7 +83,7 @@ namespace Player.Matchmaking.Weapon
                 }
                 
                 reloadImage.fillAmount += Time.deltaTime / power;
-                
+
                 if(reloadImage.fillAmount >= 1f)
                     StopReload();
                 
