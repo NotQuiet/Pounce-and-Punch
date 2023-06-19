@@ -34,4 +34,14 @@ namespace Interfaces.Player.States
     {
         void OnAttackHandlerInput(Vector2 handlerPosition);
     }
+
+    public interface IOnDeath : IPlayerState
+    {
+        void OnPlayerDeath();
+    }
+
+    public interface IOnAlive : IPlayerState
+    {
+        void OnAlive();
+    }
 }
