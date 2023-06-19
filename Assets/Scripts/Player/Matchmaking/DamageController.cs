@@ -12,6 +12,7 @@ namespace Player.Matchmaking
         
         public void DoDamage(int damageValue)
         {
+            Debug.Log("On get damage: " + damageValue);
             _playerStateManager.OnGetDamage(damageValue);
         }
 
