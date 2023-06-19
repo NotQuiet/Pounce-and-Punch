@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Ammunition.Weapons
 {
-    public class Weapon : MonoBehaviour, IWeaponPowerChange
+    public class Weapon : MonoBehaviour, IWeaponPowerChange, IOnReloadObserver
     {
         public WeaponCharacteristics characteristics;
 
@@ -16,11 +16,13 @@ namespace Ammunition.Weapons
         [SerializeField] protected Transform muzzle;
         [SerializeField] protected int poolSize;
 
-        protected Shell shell;
-        protected ObjectPool<Shell> _shellPool;
+        private Shell shell;
+        private ObjectPool<Shell> _shellPool;
 
         private Transform _ammunition;
         private PlayerWeaponManager _weaponManager;
+
+        private bool _isReloading;
 
         private void Start()
         {
@@ -37,7 +39,17 @@ namespace Ammunition.Weapons
         {
             _shellPool = new ObjectPool<Shell>(poolSize, shellFabric, muzzle);
         }
-        protected virtual void Shoot(bool usePower = true)
+
+        protected void MakeShot(bool userPower = true)
+        {
+            if(_isReloading)
+                return;
+            
+            ProduceProjectile();
+            Shoot(userPower);
+        }
+        
+        private void Shoot(bool usePower)
         {
             shell.Reset();
             shell.transform.SetParent(_ammunition);
@@ -52,12 +64,7 @@ namespace Ammunition.Weapons
             characteristics.currentPower = 0;
         }
 
-        protected virtual void Reload()
-        {
-            
-        }
-
-        protected virtual void ProduceProjectile()
+        private void ProduceProjectile()
         {
             _shellPool.Produce();
             shell = _shellPool.Object;
@@ -66,6 +73,11 @@ namespace Ammunition.Weapons
         public void InitializeWeaponManager(PlayerWeaponManager manager)
         {
             _weaponManager = manager;
+        }
+
+        public void OnReload(bool isReload)
+        {
+            _isReloading = isReload;
         }
 
         public void OnChangePower(int power)

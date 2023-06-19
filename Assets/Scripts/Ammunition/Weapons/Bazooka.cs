@@ -14,8 +14,8 @@ namespace Ammunition.Weapons
         public void OnEndAimAttack()
         {
             Debug.Log("Shoot power: " + characteristics.currentPower);
-            ProduceProjectile();
-            Shoot();
+            
+            MakeShot();
         }
         
         public void InitializeStateManager(PlayerStateManager manager)

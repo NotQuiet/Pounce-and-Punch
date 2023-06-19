@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characteristics:
-    possiblePower: 10
+    possiblePower: 5
     currentPower: 5
     shootDelay: 0.15
   shellFabric: {fileID: 2544024479413163205}

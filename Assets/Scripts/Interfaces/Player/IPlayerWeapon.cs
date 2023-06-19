@@ -17,4 +17,9 @@ namespace Interfaces.Player
     {
         void OnChangePower(int power);
     }
+
+    public interface IOnReloadObserver : IPlayerWeapon
+    {
+        void OnReload(bool isReload);
+    }
 }

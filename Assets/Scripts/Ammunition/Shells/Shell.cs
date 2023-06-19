@@ -70,6 +70,9 @@ namespace Ammunition.Shells
 
         private void DoDamage(IDamageable damageable)
         {
+            if(_activated)
+                return;
+            
             damageable.DoDamage(shellCharacteristic.currentamage);
         }
 

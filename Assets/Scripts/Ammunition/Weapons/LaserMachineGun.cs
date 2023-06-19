@@ -37,8 +37,7 @@ namespace Ammunition.Weapons
 
             while (_isActive)
             {
-                ProduceProjectile();
-                Shoot(false);
+                MakeShot(false);
 
                 yield return new WaitForSeconds(characteristics.shootDelay);
             }

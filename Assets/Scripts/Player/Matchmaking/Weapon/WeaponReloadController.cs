@@ -27,6 +27,8 @@ namespace Player.Matchmaking.Weapon
         {
             _isAim = false;
             ReloadWeapon();
+            
+            NeedReload(false);
         }
 
         private void StartReloadDecrease()
@@ -41,6 +43,12 @@ namespace Player.Matchmaking.Weapon
             int currentPower = 0;
             while (_isAim)
             {
+                if (reloadImage.fillAmount <= 0.01f)
+                {
+                    NeedReload(true);
+                    ReloadWeapon();
+                }
+
                 reloadImage.fillAmount -= Time.deltaTime / power;
                 
                 if(reloadImage.fillAmount > 0)
@@ -56,16 +64,37 @@ namespace Player.Matchmaking.Weapon
             StopCoroutine(nameof(DecreaseWeaponReloadUi));
             StartCoroutine(nameof(ReloadWeaponUi));
         }
+
+        private void StopReload()
+        {
+            StopCoroutine(nameof(ReloadWeaponUi));
+        }
         
         IEnumerator ReloadWeaponUi()
         {
             var power = _weaponCharacteristics.possiblePower;
 
-            while (!_isAim)
+            while (true)
             {
+                if (_isAim && reloadImage.fillAmount >= 0.01f)
+                {
+                    NeedReload(false);
+                    StartReloadDecrease();
+                }
+                
                 reloadImage.fillAmount += Time.deltaTime / power;
+                
+                if(reloadImage.fillAmount >= 1f)
+                    StopReload();
+                
                 yield return null;
             }
+        }
+
+        private void NeedReload(bool isNeed)
+        {
+            Debug.Log("Need reload: " + isNeed);
+            _weaponManager.OnReload(isNeed);
         }
         
         public void InitializeStateManager(PlayerStateManager manager)

@@ -33,6 +33,15 @@ namespace Player.Matchmaking.Managers
             }
         }
 
+        public void OnReload(bool isReload)
+        {
+            foreach (var state in _weaponStates)
+            {
+                if (state is IOnReloadObserver reload)
+                    reload.OnReload(isReload);
+            }
+        }
+
 
         public void InitializeManager()
         {
