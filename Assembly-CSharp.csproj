@@ -50,6 +50,7 @@
      <Compile Include="Assets/Scripts/Player/Modules/Attacker.cs" />
      <Compile Include="Assets/Scripts/Fabrics/WeaponFabric.cs" />
      <Compile Include="Assets/ThirdParty/VFX_Klaus/Scripts/SpawnProjectiles.cs" />
+     <Compile Include="Assets/Scripts/Player/Matchmaking/PlayerLife/PlayerHealthSlider.cs" />
      <Compile Include="Assets/Scripts/Interfaces/Player/IRotate.cs" />
      <Compile Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Scripts/PanelCasualGame.cs" />
      <Compile Include="Assets/Scripts/Fabrics/ShellFabric.cs" />
@@ -958,6 +959,26 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="UniTask.DOTween.csproj">
+      <Project>{987c510b-3e0f-3cb9-7b81-9dd5d4f32e45}</Project>
+      <Name>UniTask.DOTween</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Linq.csproj">
+      <Project>{c9f5fc9c-8253-2be7-3b79-f8804cd84ef0}</Project>
+      <Name>UniTask.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.TextMeshPro.csproj">
+      <Project>{2a4c89d9-9f5d-79b6-4de1-cb1460dcb61d}</Project>
+      <Name>UniTask.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.csproj">
+      <Project>{38e9d6ff-cfc3-02d8-4a9e-c8047e523ff5}</Project>
+      <Name>UniTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Addressables.csproj">
+      <Project>{7866b76a-d212-79b4-dd46-340452603a38}</Project>
+      <Name>UniTask.Addressables</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

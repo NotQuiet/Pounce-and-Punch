@@ -51,7 +51,7 @@ namespace Player.Matchmaking.Managers
             }
         }
 
-        public void OnGetDamage(int damageValue)
+        public void OnGetDamage(float damageValue)
         {
             foreach (var state in _playerStates)
             {

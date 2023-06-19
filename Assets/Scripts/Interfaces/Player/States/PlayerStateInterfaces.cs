@@ -22,7 +22,7 @@ namespace Interfaces.Player.States
 
     public interface IOnGetDamage : IPlayerState
     {
-        void OnGetDamage(int damageValue);
+        void OnGetDamage(float damageValue);
     }
 
     public interface IWeaponReload : IPlayerState

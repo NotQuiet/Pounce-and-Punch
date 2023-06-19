@@ -52,6 +52,8 @@ namespace Ammunition.Shells
         {
             if (other.TryGetComponent(out IDamageable damageable))
             {
+                Debug.Log("Shell do damage: " + other.name);
+
                 DoDamage(damageable);
             }
             

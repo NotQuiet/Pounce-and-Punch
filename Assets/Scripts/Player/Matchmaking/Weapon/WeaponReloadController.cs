@@ -93,7 +93,6 @@ namespace Player.Matchmaking.Weapon
 
         private void NeedReload(bool isNeed)
         {
-            Debug.Log("Need reload: " + isNeed);
             _weaponManager.OnReload(isNeed);
         }
         

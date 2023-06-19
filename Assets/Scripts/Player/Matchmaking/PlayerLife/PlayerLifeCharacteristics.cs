@@ -5,15 +5,15 @@ namespace Player.Matchmaking.PlayerLife
     [Serializable]
     public class PlayerLifeCharacteristics
     {
-        public int absoluteHp;
-        public int CurrentHp { get; private set; }
+        public float absoluteHp;
+        public float CurrentHp { get; private set; }
 
         public void Initialize()
         {
             CurrentHp = absoluteHp;
         }
         
-        public void ChangeCurrentHp(int newValue)
+        public void ChangeCurrentHp(float newValue)
         {
             CurrentHp = newValue;
         }

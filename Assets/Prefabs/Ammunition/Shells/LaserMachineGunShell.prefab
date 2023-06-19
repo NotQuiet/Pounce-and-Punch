@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5721350371483661157}
   - component: {fileID: 7153577318891816236}
   - component: {fileID: 6105141089504857245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,8 +227,8 @@ MonoBehaviour:
   shellGo: {fileID: 1997148162916450965}
   damageTrigger: {fileID: 6105141089504857245}
   shellCharacteristic:
-    absolutDamage: 10
-    currentamage: 5
+    absolutDamage: 20
+    currentamage: 20
     force: 20
     lifeTime: 1
   muzzleEffect: {fileID: 765947241390207503}
@@ -239,6 +239,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8848590694280571430}
     m_Modifications:
+    - target: {fileID: 334660451308003684, guid: b8fab1f3c7c6a5848ac22317dc4b404f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 334660451930032200, guid: b8fab1f3c7c6a5848ac22317dc4b404f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2214542996896520312, guid: b8fab1f3c7c6a5848ac22317dc4b404f,
         type: 3}
       propertyPath: m_RootOrder
@@ -301,8 +311,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2214542996896520317, guid: b8fab1f3c7c6a5848ac22317dc4b404f,
         type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214542996896520317, guid: b8fab1f3c7c6a5848ac22317dc4b404f,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4494251175239741066, guid: b8fab1f3c7c6a5848ac22317dc4b404f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8fab1f3c7c6a5848ac22317dc4b404f, type: 3}
@@ -325,10 +345,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8848590694280571430}
     m_Modifications:
+    - target: {fileID: 1529244986, guid: 35d96e62fbb1d394e880a8217dbf953d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939264630486719642, guid: 35d96e62fbb1d394e880a8217dbf953d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939264630717308630, guid: 35d96e62fbb1d394e880a8217dbf953d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939264631130879495, guid: 35d96e62fbb1d394e880a8217dbf953d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4939264631899453584, guid: 35d96e62fbb1d394e880a8217dbf953d,
         type: 3}
       propertyPath: m_Name
       value: FX_Shoot_Laser_02_hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939264631899453584, guid: 35d96e62fbb1d394e880a8217dbf953d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4939264631899453584, guid: 35d96e62fbb1d394e880a8217dbf953d,
         type: 3}
@@ -404,6 +448,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939264631938703210, guid: 35d96e62fbb1d394e880a8217dbf953d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d96e62fbb1d394e880a8217dbf953d, type: 3}
