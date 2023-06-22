@@ -9,8 +9,8 @@ namespace Ammunition.Shells
         
         private void OnTriggerEnter(Collider other)
         {
+            Debug.Log("On trigger: " + other.name);
             OnTrigger?.Invoke(other);
-      
         }
     }
 }

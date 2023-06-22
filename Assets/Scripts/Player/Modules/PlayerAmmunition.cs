@@ -4,6 +4,7 @@ using Fabrics;
 using Interfaces.Player;
 using Interfaces.Player.States;
 using Player.Matchmaking.Managers;
+using TestFolder;
 using UnityEngine;
 
 namespace Player.Modules
@@ -17,11 +18,6 @@ namespace Player.Modules
         private PlayerWeaponManager _weaponManager;
 
         private Weapon _weapon;
-
-        private void SetWeapon()
-        {
-            
-        }
 
         private void InitializeWeapon()
         {
@@ -41,7 +37,6 @@ namespace Player.Modules
         {
             _weaponManager = manager;
             InitializeWeapon();
-            SetWeapon();
         }
     }
 }

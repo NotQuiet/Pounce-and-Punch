@@ -11,7 +11,7 @@ namespace Player.Modules
         IOnAttackInput
     {
         [SerializeField] private Transform targetObj;
-        [SerializeField] private FixedJoystick attackJoystick;
+        [SerializeField] private AttackFixedJoystick attackJoystick;
         
         private readonly float _rotateSpeed = 0.03f;
         private float _turnSmoothVelocity;

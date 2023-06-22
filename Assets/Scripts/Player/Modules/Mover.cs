@@ -3,12 +3,14 @@ using Game;
 using Interfaces.Player;
 using Interfaces.Player.States;
 using Player.Matchmaking.Managers;
+using ThirdParty.Joystick_Pack.Scripts.Joysticks;
 using UnityEngine;
 
 namespace Player.Modules
 {
-    public class Mover : MonoBehaviour, IMove, IRotate, IOnAttackInput
+    public class Mover : MonoBehaviour, IMove, IRotate, IOnAttackInput, IOnMoveInput
     {
+        [SerializeField] private MovementFixedJoystick movementFixedJoystick;
         [SerializeField] private Transform targetObj;
 
         private PlayerStateManager _stateManager;
@@ -18,12 +20,15 @@ namespace Player.Modules
         private readonly float _slowdownSpeedThreshold = 7f;
         private readonly float _slowDownOffset = 3f;
         private readonly float _turnSpeed = 0.1f;
-
-
+        
         private float _currentSpeed = 10f;
         private float _turnSmoothVelocity;
 
         private bool _onAim;
+
+        private Vector3 _moveDirection;
+        private bool _isMoving;
+        
 
         private void Awake()
         {
@@ -33,12 +38,28 @@ namespace Player.Modules
 
         private void OnEnable()
         {
-            _moveInput.OnMoveInput += MoveAndRotate;
+            //_moveInput.OnMoveInput += MoveAndRotate;
+            movementFixedJoystick.OnMoveInput += OnJoystickInput;
         }
 
         private void OnDisable()
         {
-            _moveInput.OnMoveInput -= MoveAndRotate;
+            //_moveInput.OnMoveInput -= MoveAndRotate;
+            movementFixedJoystick.OnMoveInput -= OnJoystickInput;
+
+        }
+
+        private void Update()
+        {
+            if(_isMoving) MoveAndRotate(_moveDirection);
+        }
+
+        private void OnJoystickInput(Vector3 inputDir)
+        {
+            var newPosition = new Vector3(inputDir.x, 0, inputDir.y).normalized;
+
+            _moveDirection = newPosition;
+            //MoveAndRotate(newPosition);
         }
 
         private void MoveAndRotate(Vector3 newPosition)
@@ -62,6 +83,8 @@ namespace Player.Modules
             {
                 _currentSpeed = _speed;
             }
+
+            Debug.Log("Move to new direction: " + direction);
 
             _rb.AddForce(direction * _currentSpeed * Time.deltaTime, ForceMode.Impulse);
         }
@@ -93,6 +116,16 @@ namespace Player.Modules
         public void InitializeStateManager(PlayerStateManager manager)
         {
             _stateManager = manager;
+        }
+
+        public void OnMove()
+        {
+            _isMoving = true;
+        }
+
+        public void OnEndMove()
+        {
+            _isMoving = false;
         }
     }
 }

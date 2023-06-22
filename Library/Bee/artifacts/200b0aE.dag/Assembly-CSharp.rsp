@@ -408,6 +408,8 @@
 "Assets/Scripts/Player/Modules/PlayerAmmunition.cs"
 "Assets/Scripts/Player/UiCanvas/CanvasCameraFollowing.cs"
 "Assets/Scripts/Pools/ObjectPool.cs"
+"Assets/Scripts/TestFolder/GunChanger.cs"
+"Assets/Scripts/TestFolder/Test.cs"
 "Assets/ThirdParty/Joystick Pack/Scripts/Base/Joystick.cs"
 "Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs"
 "Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs"

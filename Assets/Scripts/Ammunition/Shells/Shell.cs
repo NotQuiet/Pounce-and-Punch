@@ -34,7 +34,6 @@ namespace Ammunition.Shells
 
         public void AddPower(int power)
         {
-            Debug.Log("Add power to shell: " + power);
             shellCharacteristic.currentDamage += power;
         }
 
@@ -74,7 +73,6 @@ namespace Ammunition.Shells
             if(_activated)
                 return;
 
-            Debug.Log("Shell damage: " + shellCharacteristic.currentDamage);
             damageable.DoDamage(shellCharacteristic.currentDamage);
             ResetDamage();
         }

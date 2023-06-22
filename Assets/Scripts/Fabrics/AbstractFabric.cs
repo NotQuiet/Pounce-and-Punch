@@ -11,5 +11,10 @@ namespace Fabrics
             var obj = Instantiate(prefab, parent);
             return obj;
         }
+
+        public void SetNewPrefab(T obj)
+        {
+            prefab = obj;
+        }
     }
 }
