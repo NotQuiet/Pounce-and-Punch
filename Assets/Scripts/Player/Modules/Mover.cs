@@ -1,5 +1,3 @@
-using System;
-using Game;
 using Interfaces.Player;
 using Interfaces.Player.States;
 using Player.Matchmaking.Managers;
@@ -14,7 +12,7 @@ namespace Player.Modules
         [SerializeField] private Transform targetObj;
 
         private PlayerStateManager _stateManager;
-        private MoveInput _moveInput;
+        // private MoveInput _moveInput;
         private Rigidbody _rb;
         private readonly float _speed = 10f;
         private readonly float _slowdownSpeedThreshold = 7f;
@@ -33,7 +31,7 @@ namespace Player.Modules
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();
-            _moveInput = GetComponent<MoveInput>();
+            // _moveInput = GetComponent<MoveInput>();
         }
 
         private void OnEnable()
@@ -49,7 +47,7 @@ namespace Player.Modules
 
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if(_isMoving) MoveAndRotate(_moveDirection);
         }
@@ -76,31 +74,28 @@ namespace Player.Modules
             {
                 if (_currentSpeed > _slowdownSpeedThreshold)
                 {
-                    _currentSpeed -= Time.deltaTime * _slowDownOffset;
+                    _currentSpeed -= Time.fixedDeltaTime * _slowDownOffset;
                 }
             }
             else
             {
                 _currentSpeed = _speed;
             }
-
-            Debug.Log("Move to new direction: " + direction);
-
-            _rb.AddForce(direction * _currentSpeed * Time.deltaTime, ForceMode.Impulse);
+            
+            _rb.AddForce(direction * (_currentSpeed * Time.fixedDeltaTime), ForceMode.Impulse);
         }
 
         void IRotate.Rotate(Vector3 direction)
         {
             if (_onAim) return;
 
-            if (direction.magnitude >= 0.1f)
-            {
-                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-                float angle = Mathf.SmoothDampAngle(targetObj.eulerAngles.y, targetAngle,
-                    ref _turnSmoothVelocity,
-                    _turnSpeed);
-                targetObj.rotation = Quaternion.Euler(0f, angle, 0f);
-            }
+            if (!(direction.magnitude >= 0.1f)) return;
+            
+            var targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            var angle = Mathf.SmoothDampAngle(targetObj.eulerAngles.y, targetAngle,
+                ref _turnSmoothVelocity,
+                _turnSpeed);
+            targetObj.rotation = Quaternion.Euler(0f, angle, 0f);
         }
 
         public void OnAimAttack()

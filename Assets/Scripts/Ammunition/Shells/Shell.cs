@@ -32,7 +32,7 @@ namespace Ammunition.Shells
             _activated = false;
         }
 
-        public void AddPower(int power)
+        public void AddPower(float power)
         {
             shellCharacteristic.currentDamage += power;
         }

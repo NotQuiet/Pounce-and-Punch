@@ -1,5 +1,6 @@
 using System.Collections;
 using Ammunition.Weapons;
+using Cysharp.Threading.Tasks;
 using Interfaces.Player;
 using Interfaces.Player.States;
 using Player.Matchmaking.Managers;
@@ -16,7 +17,7 @@ namespace Player.Matchmaking.Weapon
         private PlayerWeaponManager _weaponManager;
 
         private bool _isAim;
-        private int _currentPower = 0;
+        private float _currentPower = 0;
 
         public void OnAimAttack()
         {
@@ -29,73 +30,47 @@ namespace Player.Matchmaking.Weapon
             _isAim = false;
             _currentPower = 0;
             ReloadWeapon();
-            
-            NeedReload(false);
         }
 
         private void StartReloadDecrease()
         {
-            StopCoroutine(nameof(ReloadWeaponUi));
-            StartCoroutine(nameof(DecreaseWeaponReloadUi));
+            DecreaseWeaponReload();
         }
 
-        IEnumerator DecreaseWeaponReloadUi()
+        private async void DecreaseWeaponReload()
         {
             var power = _weaponCharacteristics.possiblePower;
+            
             while (_isAim)
             {
-                if (reloadImage.fillAmount <= 0.01f)
-                {
-                    NeedReload(true);
-                    ReloadWeapon();
-                }
-
                 reloadImage.fillAmount -= Time.deltaTime / power;
                 
                 if(reloadImage.fillAmount > 0.1f)
                     _currentPower++;
                 
-                _weaponManager.PowerChange(_currentPower);
-                yield return null;
+                _weaponManager.PowerChange(_currentPower * _weaponCharacteristics.powerMultiplier);
+                
+                await UniTask.WaitForFixedUpdate();
             }
         }
 
         private void ReloadWeapon()
         {
-            StopCoroutine(nameof(DecreaseWeaponReloadUi));
-            StartCoroutine(nameof(ReloadWeaponUi));
+            ReloadWeaponAsync();
         }
 
-        private void StopReload()
-        {
-            StopCoroutine(nameof(ReloadWeaponUi));
-        }
-        
-        IEnumerator ReloadWeaponUi()
+        private async void ReloadWeaponAsync()
         {
             var power = _weaponCharacteristics.possiblePower;
 
-            while (true)
+            while (!_isAim)
             {
-                if (_isAim && reloadImage.fillAmount >= 0.01f)
-                {
-                    NeedReload(false);
-                    StartReloadDecrease();
-                }
-                
                 reloadImage.fillAmount += Time.deltaTime / power;
 
-                if(reloadImage.fillAmount >= 1f)
-                    StopReload();
-                
-                yield return null;
+                await UniTask.WaitForFixedUpdate();
             }
         }
-
-        private void NeedReload(bool isNeed)
-        {
-            _weaponManager.OnReload(isNeed);
-        }
+        
         
         public void InitializeStateManager(PlayerStateManager manager)
         {

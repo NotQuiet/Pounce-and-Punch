@@ -24,7 +24,7 @@ namespace Player.Matchmaking.Managers
             }
         }
 
-        public void PowerChange(int value)
+        public void PowerChange(float value)
         {
             foreach (var state in _weaponStates)
             {

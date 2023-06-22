@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characteristics:
+    powerMultiplier: 2
     possiblePower: 10
     currentPower: 0
     shootDelay: 0

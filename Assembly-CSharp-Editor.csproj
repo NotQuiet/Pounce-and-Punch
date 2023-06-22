@@ -46,8 +46,13 @@
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Editor/DynamicJoystickEditor.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Editor/FloatingJoystickEditor.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Editor/JoystickEditor.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Editor/CFX_SpawnSystemEditor.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Editor/CFX_InspectorHelpEditor.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX Easy Editor/Editor/CFXEasyEditor.cs" />
      <Folder Include="Assets/TutorialInfo/Scripts/Editor" />
      <Folder Include="Assets/ThirdParty/Joystick Pack/Scripts/Editor" />
+     <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Editor" />
+     <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX Easy Editor/Editor" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.18f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -865,6 +870,26 @@
     <ProjectReference Include="UniTask.Addressables.csproj">
       <Project>{7866b76a-d212-79b4-dd46-340452603a38}</Project>
       <Name>UniTask.Addressables</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXRRuntime.csproj">
+      <Project>{3f9741fd-d3f5-b6c6-e7c0-c4aee77b1506}</Project>
+      <Name>CFXRRuntime</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXREditor.csproj">
+      <Project>{cec1da14-9e4e-97b7-8ffd-f06f07dc3872}</Project>
+      <Name>CFXREditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
+      <Project>{48747a52-7045-523d-9b95-d9621ce7b4a8}</Project>
+      <Name>ToonyColorsPro.Demo.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXRDemo.csproj">
+      <Project>{c5f1beec-fa42-b764-7b8b-2d2fc38e05b9}</Project>
+      <Name>CFXRDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="KinoBloom.Runtime.csproj">
+      <Project>{a13474b2-3fe8-0582-307e-99f2c04f35de}</Project>
+      <Name>KinoBloom.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

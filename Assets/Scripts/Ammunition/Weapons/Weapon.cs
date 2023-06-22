@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Ammunition.Weapons
 {
-    public class Weapon : MonoBehaviour, IWeaponPowerChange, IOnReloadObserver
+    public class Weapon : MonoBehaviour, IWeaponPowerChange
     {
         public WeaponCharacteristics characteristics;
 
@@ -21,8 +21,6 @@ namespace Ammunition.Weapons
 
         private Transform _ammunition;
         private PlayerWeaponManager _weaponManager;
-
-        private bool _isReloading;
 
         private void Start()
         {
@@ -42,9 +40,6 @@ namespace Ammunition.Weapons
 
         protected void MakeShot(bool userPower = true)
         {
-            if(_isReloading)
-                return;
-            
             ProduceProjectile();
             Shoot(userPower);
         }
@@ -76,12 +71,7 @@ namespace Ammunition.Weapons
             _weaponManager = manager;
         }
 
-        public void OnReload(bool isReload)
-        {
-            _isReloading = isReload;
-        }
-
-        public void OnChangePower(int power)
+        public void OnChangePower(float power)
         {
             characteristics.currentPower = power;
         }

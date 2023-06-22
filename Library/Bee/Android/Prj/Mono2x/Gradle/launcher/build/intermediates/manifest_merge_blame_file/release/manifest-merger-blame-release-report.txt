@@ -77,8 +77,8 @@
 44-->[:unityLibrary] /Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:34:13-44
 45            android:resizeableActivity="false"
 45-->[:unityLibrary] /Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:35:13-47
-46            android:screenOrientation="fullUser"
-46-->[:unityLibrary] /Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:36:13-49
+46            android:screenOrientation="reverseLandscape"
+46-->[:unityLibrary] /Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:36:13-57
 47            android:theme="@style/UnityThemeSelector" >
 47-->[:unityLibrary] /Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:37:13-54
 48            <intent-filter>

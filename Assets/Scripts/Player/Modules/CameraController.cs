@@ -1,6 +1,8 @@
 using System.Collections;
+using Cysharp.Threading.Tasks;
 using Interfaces.Player.States;
 using Player.Matchmaking.Managers;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Player.Modules
@@ -19,6 +21,8 @@ namespace Player.Modules
         private readonly float _lookTargetOffsetDistance = 120f;
         private Vector3 _lookTargetStartPosition;
 
+
+        private bool _isAim;
         private void Start()
         {
             _lookTargetStartPosition = lookTarget.localPosition;
@@ -26,71 +30,49 @@ namespace Player.Modules
 
         public void OnAimAttack()
         {
-            //ChangeLookTargetPosition();
-            StopCoroutine(nameof(SmoothReturnTargetPosition));
+            _isAim = true;
         }
 
         public void OnEndAimAttack()
         {
+            _isAim = false;
             ReturnLookTarget();
         }
 
         private void LateUpdate()
         {
             Follow();
-            LookAt();
+            LookAtTarget();
         }
 
         private void Follow()
         {
             Vector3 newPosition = Vector3.Lerp(camera.transform.position, cameraPosition.position,
                 _lerpSpeed * Time.deltaTime);
+            
             camera.transform.position = newPosition;
-        }
-
-        private void LookAt()
-        {
-            camera.transform.LookAt(lookTarget);
-        }
-
-        private void ChangeLookTargetPosition()
-        {
-            StartCoroutine(nameof(SmoothChangeTargetPosition));
-            StopCoroutine(nameof(SmoothReturnTargetPosition));
         }
 
         private void ReturnLookTarget()
         {
-            StopCoroutine(nameof(SmoothChangeTargetPosition));
-            StartCoroutine(nameof(SmoothReturnTargetPosition));
+            ReturnLookTargetAsync();
         }
 
-        IEnumerator SmoothChangeTargetPosition()
+        private async void ReturnLookTargetAsync()
         {
-            while (lookTarget.localPosition.z < _aimDistance)
+            while (!_isAim)
             {
-                var localPosition = lookTarget.localPosition;
-                Vector3 newLookPosition = Vector3.Lerp(localPosition,
-                    new Vector3(localPosition.x, localPosition.y, _aimDistance),
-                    _smoothChangeSpeed * Time.deltaTime);
-                localPosition = newLookPosition;
-                lookTarget.localPosition = localPosition;
-                yield return null;
-            }
-        }
-
-        IEnumerator SmoothReturnTargetPosition()
-        {
-            while (lookTarget.localPosition.z > _lookTargetStartPosition.z)
-            {
-                var localPosition = lookTarget.localPosition;
-                Vector3 newLookPosition = Vector3.Lerp(localPosition,
-                    _lookTargetStartPosition,
+                Vector3 newPosition = Vector3.Lerp(lookTarget.localPosition, _lookTargetStartPosition,
                     _smoothReturnSpeed * Time.deltaTime);
-                localPosition = newLookPosition;
-                lookTarget.localPosition = localPosition;
-                yield return null;
+                lookTarget.localPosition = newPosition;
+                await UniTask.Yield();
             }
+           
+        }
+
+        private void LookAtTarget()
+        {
+            camera.transform.LookAt(lookTarget);
         }
 
         public void InitializeStateManager(PlayerStateManager manager)

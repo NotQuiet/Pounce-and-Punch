@@ -15,7 +15,7 @@ namespace Interfaces.Player
 
     public interface IWeaponPowerChange : IPlayerWeapon
     {
-        void OnChangePower(int power);
+        void OnChangePower(float power);
     }
 
     public interface IOnReloadObserver : IPlayerWeapon

@@ -31,7 +31,7 @@ namespace Player.Matchmaking.PlayerLife
             while (slider.value > value)
             {
                 slider.value -= Time.deltaTime * time;
-                await UniTask.Yield();
+                await UniTask.WaitForFixedUpdate();
             }
         }
     }

@@ -5,8 +5,10 @@ namespace Ammunition.Weapons
     [Serializable]
     public class WeaponCharacteristics
     {
+        public float powerMultiplier;
+
         public float possiblePower;
-        public int currentPower;
+        public float currentPower;
 
         public float shootDelay;
     }

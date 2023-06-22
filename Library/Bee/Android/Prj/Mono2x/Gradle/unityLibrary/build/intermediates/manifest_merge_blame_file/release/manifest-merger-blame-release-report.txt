@@ -52,15 +52,15 @@
 31            android:name="com.unity3d.player.UnityPlayerActivity"
 31-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:15-68
 32            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
-32-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:180-361
+32-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:188-369
 33            android:hardwareAccelerated="false"
-33-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:397-432
+33-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:405-440
 34            android:launchMode="singleTask"
-34-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:148-179
+34-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:156-187
 35            android:resizeableActivity="false"
-35-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:362-396
-36            android:screenOrientation="fullUser"
-36-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:111-147
+35-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:370-404
+36            android:screenOrientation="reverseLandscape"
+36-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:111-155
 37            android:theme="@style/UnityThemeSelector" >
 37-->/Users/mikhailleonov/Pounce and Punch/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:69-110
 38            <intent-filter>
