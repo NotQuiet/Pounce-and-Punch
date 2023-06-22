@@ -26,6 +26,7 @@ namespace Player.Modules
         private void Start()
         {
             _lookTargetStartPosition = lookTarget.localPosition;
+            camera.transform.position = cameraPosition.position;
         }
 
         public void OnAimAttack()

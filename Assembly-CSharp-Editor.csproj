@@ -42,13 +42,13 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Editor/VariableJoystickEditor.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX Easy Editor/Editor/CFXEasyEditor.cs" />
      <Compile Include="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Editor/CFX_InspectorHelpEditor.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Editor/DynamicJoystickEditor.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Editor/FloatingJoystickEditor.cs" />
-     <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Editor/JoystickEditor.cs" />
      <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Editor/CFX_SpawnSystemEditor.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Editor/CFX_InspectorHelpEditor.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX Easy Editor/Editor/CFXEasyEditor.cs" />
+     <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Editor/JoystickEditor.cs" />
      <Folder Include="Assets/TutorialInfo/Scripts/Editor" />
      <Folder Include="Assets/ThirdParty/Joystick Pack/Scripts/Editor" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Editor" />
@@ -788,17 +788,11 @@
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-     <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
@@ -808,6 +802,12 @@
      </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.PlasticSCM.Editor">
+     <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Runtime">
+     <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
@@ -851,13 +851,29 @@
       <Project>{6078624a-1f9e-1771-1722-fe898405b13c}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
+      <Project>{48747a52-7045-523d-9b95-d9621ce7b4a8}</Project>
+      <Name>ToonyColorsPro.Demo.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXREditor.csproj">
+      <Project>{cec1da14-9e4e-97b7-8ffd-f06f07dc3872}</Project>
+      <Name>CFXREditor</Name>
+    </ProjectReference>
     <ProjectReference Include="UniTask.DOTween.csproj">
       <Project>{987c510b-3e0f-3cb9-7b81-9dd5d4f32e45}</Project>
       <Name>UniTask.DOTween</Name>
     </ProjectReference>
+    <ProjectReference Include="CFXRDemo.csproj">
+      <Project>{c5f1beec-fa42-b764-7b8b-2d2fc38e05b9}</Project>
+      <Name>CFXRDemo</Name>
+    </ProjectReference>
     <ProjectReference Include="UniTask.Linq.csproj">
       <Project>{c9f5fc9c-8253-2be7-3b79-f8804cd84ef0}</Project>
       <Name>UniTask.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="KinoBloom.Runtime.csproj">
+      <Project>{a13474b2-3fe8-0582-307e-99f2c04f35de}</Project>
+      <Name>KinoBloom.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="UniTask.TextMeshPro.csproj">
       <Project>{2a4c89d9-9f5d-79b6-4de1-cb1460dcb61d}</Project>
@@ -867,29 +883,13 @@
       <Project>{38e9d6ff-cfc3-02d8-4a9e-c8047e523ff5}</Project>
       <Name>UniTask</Name>
     </ProjectReference>
-    <ProjectReference Include="UniTask.Addressables.csproj">
-      <Project>{7866b76a-d212-79b4-dd46-340452603a38}</Project>
-      <Name>UniTask.Addressables</Name>
-    </ProjectReference>
     <ProjectReference Include="CFXRRuntime.csproj">
       <Project>{3f9741fd-d3f5-b6c6-e7c0-c4aee77b1506}</Project>
       <Name>CFXRRuntime</Name>
     </ProjectReference>
-    <ProjectReference Include="CFXREditor.csproj">
-      <Project>{cec1da14-9e4e-97b7-8ffd-f06f07dc3872}</Project>
-      <Name>CFXREditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
-      <Project>{48747a52-7045-523d-9b95-d9621ce7b4a8}</Project>
-      <Name>ToonyColorsPro.Demo.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="CFXRDemo.csproj">
-      <Project>{c5f1beec-fa42-b764-7b8b-2d2fc38e05b9}</Project>
-      <Name>CFXRDemo</Name>
-    </ProjectReference>
-    <ProjectReference Include="KinoBloom.Runtime.csproj">
-      <Project>{a13474b2-3fe8-0582-307e-99f2c04f35de}</Project>
-      <Name>KinoBloom.Runtime</Name>
+    <ProjectReference Include="UniTask.Addressables.csproj">
+      <Project>{7866b76a-d212-79b4-dd46-340452603a38}</Project>
+      <Name>UniTask.Addressables</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

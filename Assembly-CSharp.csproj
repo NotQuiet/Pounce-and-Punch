@@ -41,8 +41,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets/Scripts/Player/Initialize/PlayerConstructor.cs" />
      <Compile Include="Assets/Scripts/Player/Matchmaking/Managers/PlayerWeaponManager.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/ImpulseGun.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo.cs" />
      <Compile Include="Assets/Scripts/Interfaces/Player/States/PlayerStateInterfaces.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/AttackFixedJoystick.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
@@ -50,10 +53,15 @@
      <Compile Include="Assets/Scripts/Player/Matchmaking/Weapon/WeaponReloadController.cs" />
      <Compile Include="Assets/Scripts/Player/Modules/Attacker.cs" />
      <Compile Include="Assets/Scripts/Fabrics/WeaponFabric.cs" />
+     <Compile Include="Assets/Scripts/TestFolder/Test.cs" />
      <Compile Include="Assets/ThirdParty/VFX_Klaus/Scripts/SpawnProjectiles.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_AutoRotate.cs" />
      <Compile Include="Assets/Scripts/Player/Matchmaking/PlayerLife/PlayerHealthSlider.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_AutodestructWhenNoChildren.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Spawn System/CFX_SpawnSystem.cs" />
      <Compile Include="Assets/Scripts/Interfaces/Player/IRotate.cs" />
      <Compile Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Scripts/PanelCasualGame.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_AutoStopLoopedEffect.cs" />
      <Compile Include="Assets/Scripts/Fabrics/ShellFabric.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/WeaponCharacteristics.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/ShellCharacteristic.cs" />
@@ -61,6 +69,8 @@
      <Compile Include="Assets/Scripts/Player/Initialize/PlayerInitializeManager.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/Shell.cs" />
      <Compile Include="Assets/Scripts/Interfaces/Player/IMove.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_RandomDir.cs" />
+     <Compile Include="Assets/Scripts/TestFolder/GunChanger.cs" />
      <Compile Include="Assets/Scripts/Player/Modules/CameraController.cs" />
      <Compile Include="Assets/Scripts/Player/Matchmaking/PlayerLife/RespawnController.cs" />
      <Compile Include="Assets/Scripts/Game/GameListeners.cs" />
@@ -69,50 +79,41 @@
      <Compile Include="Assets/Scripts/Player/Matchmaking/DamageController.cs" />
      <Compile Include="Assets/Scripts/Player/Modules/MoveInput.cs" />
      <Compile Include="Assets/Scripts/Pools/ObjectPool.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_AutoDestructShuriken.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/Bazooka.cs" />
      <Compile Include="Assets/Scripts/Player/Matchmaking/Managers/PlayerStateManager.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_InspectorHelp.cs" />
      <Compile Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Scripts/PanelControlCasualGame.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Base/Joystick.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_RotateCamera.cs" />
      <Compile Include="Assets/Scripts/Player/Matchmaking/PlayerLife/PlayerLifeController.cs" />
      <Compile Include="Assets/Scripts/Interfaces/Player/IPlayerWeapon.cs" />
      <Compile Include="Assets/Scripts/Player/Modules/Mover.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/Weapon.cs" />
      <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/ObsidianGun.cs" />
+     <Compile Include="Assets/Scripts/Map/Spawning/SpawnPoint.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/ShellDamageTrigger.cs" />
      <Compile Include="Assets/Scripts/Game/GameManager.cs" />
+     <Compile Include="Assets/Scripts/Map/Spawning/PlayersSpawnPoints.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_RandomDirectionTranslate.cs" />
      <Compile Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Extensions/UIParticle/UIParticleSystem.cs" />
+     <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/MovementFixedJoystick.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/LaserMachineGunShell.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/LaserMachineGun.cs" />
      <Compile Include="Assets/Scripts/Player/UiCanvas/CanvasCameraFollowing.cs" />
      <Compile Include="Assets/ThirdParty/VFX_Klaus/Scripts/ProjectileMove.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_Translate.cs" />
      <Compile Include="Assets/Scripts/Fabrics/AbstractFabric.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_ShurikenThreadFix.cs" />
+     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_New.cs" />
      <Compile Include="Assets/Scripts/Interfaces/Player/IDamageable.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Pools/BazookaShellPool.cs" />
      <Compile Include="Assets/ThirdParty/VFX_Klaus/Scripts/RotateToMouse.cs" />
      <Compile Include="Assets/Scripts/Player/Matchmaking/PlayerLife/PlayerLifeCharacteristics.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/ObsidianShell.cs" />
-     <Compile Include="Assets/Scripts/TestFolder/GunChanger.cs" />
-     <Compile Include="Assets/Scripts/TestFolder/Test.cs" />
-     <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/MovementFixedJoystick.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_ShurikenThreadFix.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_AutoRotate.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_New.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_AutoStopLoopedEffect.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_RotateCamera.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_RandomDir.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_LightIntensityFade.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_Translate.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_AutodestructWhenNoChildren.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo_RandomDirectionTranslate.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_InspectorHelp.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_AutoDestructShuriken.cs" />
-     <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Spawn System/CFX_SpawnSystem.cs" />
-     <Compile Include="Assets/Scripts/Map/Spawning/PlayersSpawnController.cs" />
-     <Compile Include="Assets/Scripts/Map/Spawning/SpawnPoint.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Label" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Materials (Mobile)/Fire" />
@@ -175,6 +176,7 @@
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/CFX Prefabs (Mobile)/Hits/Color Variants" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Demo/Demo_Background" />
+     <Folder Include="Assets/Scripts/SO" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX Remaster/CFXR Prefabs/Misc" />
      <Folder Include="Assets/Scripts/Interfaces/Player/States" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/CFX Prefabs (Mobile)/Fire/Flames Looped" />
@@ -1016,17 +1018,11 @@
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-     <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
@@ -1036,6 +1032,12 @@
      </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.PlasticSCM.Editor">
+     <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Runtime">
+     <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
      <HintPath>/Users/mikhailleonov/Pounce and Punch/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
@@ -1075,13 +1077,29 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
+      <Project>{48747a52-7045-523d-9b95-d9621ce7b4a8}</Project>
+      <Name>ToonyColorsPro.Demo.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="CFXREditor.csproj">
+      <Project>{cec1da14-9e4e-97b7-8ffd-f06f07dc3872}</Project>
+      <Name>CFXREditor</Name>
+    </ProjectReference>
     <ProjectReference Include="UniTask.DOTween.csproj">
       <Project>{987c510b-3e0f-3cb9-7b81-9dd5d4f32e45}</Project>
       <Name>UniTask.DOTween</Name>
     </ProjectReference>
+    <ProjectReference Include="CFXRDemo.csproj">
+      <Project>{c5f1beec-fa42-b764-7b8b-2d2fc38e05b9}</Project>
+      <Name>CFXRDemo</Name>
+    </ProjectReference>
     <ProjectReference Include="UniTask.Linq.csproj">
       <Project>{c9f5fc9c-8253-2be7-3b79-f8804cd84ef0}</Project>
       <Name>UniTask.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="KinoBloom.Runtime.csproj">
+      <Project>{a13474b2-3fe8-0582-307e-99f2c04f35de}</Project>
+      <Name>KinoBloom.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="UniTask.TextMeshPro.csproj">
       <Project>{2a4c89d9-9f5d-79b6-4de1-cb1460dcb61d}</Project>
@@ -1091,29 +1109,13 @@
       <Project>{38e9d6ff-cfc3-02d8-4a9e-c8047e523ff5}</Project>
       <Name>UniTask</Name>
     </ProjectReference>
-    <ProjectReference Include="UniTask.Addressables.csproj">
-      <Project>{7866b76a-d212-79b4-dd46-340452603a38}</Project>
-      <Name>UniTask.Addressables</Name>
-    </ProjectReference>
     <ProjectReference Include="CFXRRuntime.csproj">
       <Project>{3f9741fd-d3f5-b6c6-e7c0-c4aee77b1506}</Project>
       <Name>CFXRRuntime</Name>
     </ProjectReference>
-    <ProjectReference Include="CFXREditor.csproj">
-      <Project>{cec1da14-9e4e-97b7-8ffd-f06f07dc3872}</Project>
-      <Name>CFXREditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
-      <Project>{48747a52-7045-523d-9b95-d9621ce7b4a8}</Project>
-      <Name>ToonyColorsPro.Demo.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="CFXRDemo.csproj">
-      <Project>{c5f1beec-fa42-b764-7b8b-2d2fc38e05b9}</Project>
-      <Name>CFXRDemo</Name>
-    </ProjectReference>
-    <ProjectReference Include="KinoBloom.Runtime.csproj">
-      <Project>{a13474b2-3fe8-0582-307e-99f2c04f35de}</Project>
-      <Name>KinoBloom.Runtime</Name>
+    <ProjectReference Include="UniTask.Addressables.csproj">
+      <Project>{7866b76a-d212-79b4-dd46-340452603a38}</Project>
+      <Name>UniTask.Addressables</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

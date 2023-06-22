@@ -18,10 +18,11 @@ namespace Player.Modules
         private PlayerWeaponManager _weaponManager;
 
         private Weapon _weapon;
-
+        
         private void InitializeWeapon()
         {
             _weapon = weaponFabric.Produce(weaponHolder);
+            
             _weaponManager.InitializeWeapon(ref _weapon.characteristics);
             _weapon.InitializeWeaponManager(_weaponManager);
             _weapon.SetAmmunition(transform);

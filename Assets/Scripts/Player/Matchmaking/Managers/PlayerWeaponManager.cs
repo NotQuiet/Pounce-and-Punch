@@ -42,6 +42,15 @@ namespace Player.Matchmaking.Managers
             }
         }
 
+        public void InitializeWeapon()
+        {
+            foreach (var state in _weaponStates)
+            {
+                if (state is IWeaponInitializeObserver weapon)
+                    weapon.InitializeWeapon();
+            }
+        }
+
 
         public void InitializeManager()
         {

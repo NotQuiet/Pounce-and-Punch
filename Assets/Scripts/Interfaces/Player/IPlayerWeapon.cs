@@ -8,6 +8,11 @@ namespace Interfaces.Player
         void InitializeWeaponManager(PlayerWeaponManager manager);
     }
 
+    public interface IWeaponInitializeObserver : IPlayerWeapon
+    {
+        void InitializeWeapon();
+    }
+
     public interface IPlayerWeaponCharacteristics : IPlayerWeapon
     {
         void InitializeWeapon(ref WeaponCharacteristics weaponCharacteristics);
