@@ -149,7 +149,7 @@ MonoBehaviour:
   shellGo: {fileID: 7948176711888719449}
   damageTrigger: {fileID: 2534131140970841943}
   shellCharacteristic:
-    absolutDamage: 20
+    absolutDamage: 200
     currentDamage: 20
     force: 500
     lifeTime: 1

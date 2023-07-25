@@ -47,6 +47,7 @@
      <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Scripts/CFX_LightIntensityFade.cs" />
      <Compile Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo/Assets/CFX_Demo.cs" />
      <Compile Include="Assets/Scripts/Interfaces/Player/States/PlayerStateInterfaces.cs" />
+     <Compile Include="Assets/Scripts/Matchmaking/HeroPick.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/AttackFixedJoystick.cs" />
      <Compile Include="Assets/ThirdParty/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/BazookaShell.cs" />
@@ -91,6 +92,7 @@
      <Compile Include="Assets/Scripts/Interfaces/Player/IPlayerWeapon.cs" />
      <Compile Include="Assets/Scripts/Player/Modules/Mover.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/Weapon.cs" />
+     <Compile Include="Assets/Scripts/Matchmaking/HeroPickCard.cs" />
      <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Weapons/ObsidianGun.cs" />
      <Compile Include="Assets/Scripts/Map/Spawning/SpawnPoint.cs" />
@@ -113,6 +115,7 @@
      <Compile Include="Assets/Scripts/Ammunition/Pools/BazookaShellPool.cs" />
      <Compile Include="Assets/ThirdParty/VFX_Klaus/Scripts/RotateToMouse.cs" />
      <Compile Include="Assets/Scripts/Player/Matchmaking/PlayerLife/PlayerLifeCharacteristics.cs" />
+     <Compile Include="Assets/Scripts/SO/MatchmakingHeroes.cs" />
      <Compile Include="Assets/Scripts/Ammunition/Shells/ObsidianShell.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Label" />
@@ -161,11 +164,14 @@
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Particle/Texture" />
      <Folder Include="Assets/Scripts/Player/Matchmaking" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Particle" />
+     <Folder Include="Assets/Scripts/Matchmaking" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/CFX Prefabs/Texts (drag-drop to prefabs)" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX Remaster/CFXR Prefabs/Screen Distortion" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/CFX Prefabs (Mobile)/Smoke/Color Variants" />
      <Folder Include="Assets/ThirdParty/VFX_Klaus/Scripts" />
      <None Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Extensions/UIParticle/hidden particle.shader" />
+     <Folder Include="Assets/So/Matchmaking" />
+     <Folder Include="Assets/Materials/HeroesMaterials" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX Remaster/CFXR Prefabs/Liquids" />
      <Folder Include="Assets/TextMesh Pro/Resources/Fonts &amp; Materials" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData" />
@@ -212,12 +218,14 @@
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Popup" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Fonts" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/CFX Prefabs/Fire/Flames Looped" />
+     <Folder Include="Assets/UiAssets/SavedPrefabs" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Materials (Mobile)/Electric" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX Remaster/CFXR Assets/Meshes" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/PSD" />
      <None Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/CartoonFX Readme.txt" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Demo" />
      <Folder Include="Assets/ThirdParty/Joystick Pack/Scripts" />
+     <Folder Include="Assets/Prefabs/Ui" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/+Document README+" />
      <Folder Include="Assets/Scripts/Fabrics" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Spawn System" />
@@ -228,6 +236,7 @@
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Materials/Stretched" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_PictoIcons(x2)" />
      <Folder Include="Assets/Scripts/Ammunition" />
+     <Folder Include="Assets/Prefabs/Ui/Joysticks" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/Prefabs/Prefabs_Component_Slider" />
      <Folder Include="Assets/Scripts/Ammunition/Weapons" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/CFX Prefabs/Fire/Color Variants" />
@@ -258,6 +267,7 @@
      <Folder Include="Assets/ThirdParty/VFX_Klaus/Textures" />
      <Folder Include="Assets/ThirdParty" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Frame" />
+     <Folder Include="Assets/Prefabs/Heroes" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX Remaster/CFXR Prefabs/Explosions" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/CFX Prefabs (Mobile)/Fire/Flames Looped/Color Variants" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Mesh" />
@@ -287,6 +297,7 @@
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/CFX Prefabs (Mobile)/Fire" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Materials" />
      <Folder Include="Assets/Prefabs/Ammunition/Shells" />
+     <Folder Include="Assets/So/Matchmaking/Heroes" />
      <None Include="Assets/ThirdParty/JMO Assets/Cartoon FX Remaster/Readme Cartoon FX Remaster.txt" />
      <Folder Include="Assets/ThirdParty/VFX_Klaus/Shaders" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/CFX Prefabs (Mobile)/Electric" />
@@ -345,6 +356,7 @@
      <None Include="Assets/ThirdParty/JMO Assets/Cartoon FX Remaster/CFXR Assets/Shaders/CFXR Particle Distortion.shader" />
      <Folder Include="Assets/ThirdParty/JMO Assets/Cartoon FX (legacy)/Materials (Mobile)/Animated" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" />
+     <Folder Include="Assets/So" />
      <Folder Include="Assets/UiAssets/GUI PRO Kit - Casual Game/ResourcesData/Sprite/Component/Icon_RuneIcons(x2)" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.18f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
