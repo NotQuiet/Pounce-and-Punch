@@ -49,7 +49,8 @@ namespace Pools
             prefab.gameObject.SetActive(true);
             Transform objTransform;
             (objTransform = prefab.transform).SetParent(_parent);
-            objTransform.position = Vector3.zero;
+            objTransform.localPosition = Vector3.zero;
+            objTransform.localRotation = Quaternion.identity;
             Object = prefab;
         }
     }

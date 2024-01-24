@@ -1,4 +1,5 @@
-using Player.States;
+using Player.Matchmaking.Managers;
+using UnityEngine;
 
 namespace Interfaces.Player.States
 {
@@ -17,5 +18,30 @@ namespace Interfaces.Player.States
     {
         void OnMove();
         void OnEndMove();
+    }
+
+    public interface IOnGetDamage : IPlayerState
+    {
+        void OnGetDamage(float damageValue);
+    }
+
+    public interface IWeaponReload : IPlayerState
+    {
+        void OnWeaponReload(float currentValue);
+    }
+
+    public interface IAttackHandlerInput : IPlayerState
+    {
+        void OnAttackHandlerInput(Vector2 handlerPosition);
+    }
+
+    public interface IOnDeath : IPlayerState
+    {
+        void OnPlayerDeath();
+    }
+
+    public interface IOnAlive : IPlayerState
+    {
+        void OnAlive();
     }
 }

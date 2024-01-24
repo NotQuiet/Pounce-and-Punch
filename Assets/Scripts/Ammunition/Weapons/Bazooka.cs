@@ -1,5 +1,6 @@
 using Interfaces.Player.States;
-using Player.States;
+using Player.Matchmaking.Managers;
+using UnityEngine;
 
 namespace Ammunition.Weapons
 {
@@ -7,12 +8,14 @@ namespace Ammunition.Weapons
     {
         public void OnAimAttack()
         {
-            ProduceProjectile();
+            // effect here
         }
 
         public void OnEndAimAttack()
         {
-            Shoot();
+            Debug.Log("Shoot power: " + characteristics.currentPower);
+            
+            MakeShot();
         }
         
         public void InitializeStateManager(PlayerStateManager manager)

@@ -1,12 +1,14 @@
 using System;
 using Ammunition.Shells;
 using Fabrics;
+using Interfaces.Player;
+using Player.Matchmaking.Managers;
 using Pools;
 using UnityEngine;
 
 namespace Ammunition.Weapons
 {
-    public class Weapon : MonoBehaviour
+    public class Weapon : MonoBehaviour, IWeaponPowerChange
     {
         public WeaponCharacteristics characteristics;
 
@@ -14,14 +16,16 @@ namespace Ammunition.Weapons
         [SerializeField] protected Transform muzzle;
         [SerializeField] protected int poolSize;
 
-        protected Shell shell;
-        protected ObjectPool<Shell> _shellPool;
+        private Shell shell;
+        private ObjectPool<Shell> _shellPool;
 
         private Transform _ammunition;
+        private PlayerWeaponManager _weaponManager;
 
         private void Start()
         {
             CreatePool();
+            _weaponManager.AddState(this);
         }
 
         public void SetAmmunition(Transform ammunition)
@@ -33,22 +37,43 @@ namespace Ammunition.Weapons
         {
             _shellPool = new ObjectPool<Shell>(poolSize, shellFabric, muzzle);
         }
-        protected virtual void Shoot()
+
+        protected void MakeShot(bool userPower = true)
         {
+            ProduceProjectile();
+            Shoot(userPower);
+        }
+        
+        private void Shoot(bool usePower)
+        {
+            shell.Reset();
             shell.transform.SetParent(_ammunition);
-            var shellRb = shell.gameObject.GetComponent<Rigidbody>();
-            shellRb.AddForce(shell.transform.forward * shell.shellCharacteristic.force, ForceMode.Impulse);
-        }
-
-        protected virtual void Reload()
-        {
+            var shellRb = shell.GetRb();
+            shellRb.velocity = Vector3.zero;
+            shellRb.AddForce(muzzle.forward * shell.shellCharacteristic.force, ForceMode.Impulse);
             
+            if(usePower)
+                shell.AddPower(characteristics.currentPower);
+            
+            shell.Activate();
+            
+            characteristics.currentPower = 0;
         }
 
-        protected virtual void ProduceProjectile()
+        private void ProduceProjectile()
         {
             _shellPool.Produce();
             shell = _shellPool.Object;
+        }
+
+        public void InitializeWeaponManager(PlayerWeaponManager manager)
+        {
+            _weaponManager = manager;
+        }
+
+        public void OnChangePower(float power)
+        {
+            characteristics.currentPower = power;
         }
     }
 }

@@ -15,7 +15,7 @@ TagManager:
   - Shell
   - Weapon
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1432118835
     locked: 0
